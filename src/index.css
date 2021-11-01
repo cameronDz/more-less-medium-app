@@ -10,3 +10,7 @@
   font-size: 16px;
   line-height: 18px;
 }
+
+.root .btn-toggle {
+  margin-top: 4px;
+}

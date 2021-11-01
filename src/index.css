@@ -9,6 +9,7 @@
 .root .text-display {
   font-size: 16px;
   line-height: 18px;
+  overflow: hidden;
 }
 
 .root .btn-toggle {

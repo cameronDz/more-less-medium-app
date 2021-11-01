@@ -13,11 +13,17 @@ const ToggleButton = ({ isExpanded, onClick }) => {
 
 const App = ({ isLongCopy = true }) => {
   const text = `${copyStart} ${isLongCopy ? copyEnd : ""}`;
+  const [heightMin, setHeightMin] = useState(72);
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflow, setIsOverflow] = useState(false);
 
   useEffect(() => {
-    // implement
+    const element = document.querySelector(".text-display")
+    const heightClient = element?.clientHeight || 0;
+    const scrollClient = element?.scrollHeight || 0;
+    if (heightClient !== scrollClient) {
+      setIsOverflow(true);
+    }
   }, [text]);
 
   const handleClickBtn = () => {
@@ -25,7 +31,7 @@ const App = ({ isLongCopy = true }) => {
   };
   return (
     <div className="root">
-      <div className="text-display">
+      <div className="text-display" style={{ height: `${heightMin}px` }}>
         {text}
       </div>
       {isOverflow && <ToggleButton isExpanded={isExpanded} onClick={handleClickBtn}/>}

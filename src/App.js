@@ -27,6 +27,7 @@ const App = ({ isLongCopy = true }) => {
       setIsOverflow(true);
       setHeightMax(scrollClient);
       setHeightMin(heightClient);
+      setHeightCurrent(heightClient);
     }
   }, [text]);
 

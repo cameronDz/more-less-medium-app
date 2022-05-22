@@ -16,3 +16,23 @@
 .root .btn-toggle {
   margin-top: 4px;
 }
+
+.root .text-display.collapsed {
+  animation: mask-collapsing 0.5s;
+  mask-image: linear-gradient(black 50%, transparent);
+}
+
+.root .text-display.expanded {
+  animation: mask-expanding 0.5s;
+  mask-image: linear-gradient(black 100%, transparent);
+}
+
+@keyframes mask-collapsing {
+  from { mask-image: linear-gradient(black 100%, transparent); }
+  to { mask-image: linear-gradient(black 50%, transparent); }
+}
+
+@keyframes mask-expanding {
+  from { mask-image: linear-gradient(black 50%, transparent); }
+  to { mask-image: linear-gradient(black 100%, transparent); }
+}

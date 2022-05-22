@@ -38,7 +38,10 @@ const App = ({ isLongCopy = true }) => {
   };
   return (
     <div className="root">
-      <div className="text-display" style={{ height: `${heightCurrent}px` }}>
+      <div
+        className={`${isExpanded ? "expanded" : "collapsed"} text-display`}
+        style={{ height: `${heightCurrent}px` }}
+      >
         {text}
       </div>
       {isOverflow && <ToggleButton isExpanded={isExpanded} onClick={handleClickBtn}/>}
